@@ -26,7 +26,7 @@ function startGame()
     showHideButton(btnStart, 0);
     showHideButton(btnRetry, 0);
 
-    createLevel(1, 1);
+    createLevel(5, 13);
     
     if(!isStart){
         loop();// inicia o game loop

@@ -1,15 +1,17 @@
-function Paddle(context, x, y, width, height, color)
+class Paddle
 {
-    this.context = context;
-    this.x = x;
-    this.y = y;
-    this.width = width;
-    this.height = height;
-    this.color = color;
-}
+    constructor(context, x, y, width, height, color)
+    {
+        this.context = context;
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+        this.color = color;
+    }
 
-Paddle.prototype = {
-    update: function(x) {
+    update(x) 
+    {
         this.x = x;
 
         if(this.x < 0){
@@ -17,8 +19,9 @@ Paddle.prototype = {
         }else if(this.x + this.width > this.context.canvas.width){
             this.x = this.context.canvas.width - this.width;
         }
-    },
-    draw: function() {
+    }
+
+    draw() {
         let ctx = this.context;
 
         ctx.fillStyle = this.color;

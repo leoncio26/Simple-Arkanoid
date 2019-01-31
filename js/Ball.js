@@ -1,16 +1,17 @@
-function Ball(context, x, y, radius, color)
+class Ball 
 {
-    this.context = context;
-    this.x = x;
-    this.y = y;
-    this.vx = Math.random() + 0.1;
-    this.vy = -3;
-    this.radius = radius;
-    this.color = color;
-}
+    constructor(context, x, y, radius, color) 
+    {
+        this.context = context;
+        this.x = x;
+        this.y = y;
+        this.vx = Math.random() + 0.1;
+        this.vy = -3;
+        this.radius = radius;
+        this.color = color;
+    }
 
-Ball.prototype = {
-    update: function() {
+    update() {
         let ctx = this.context;
 
         this.x += this.vx;
@@ -31,9 +32,9 @@ Ball.prototype = {
             this.y = 250;
             balls--;
         }
-    },
-    draw: function() {
+    }
 
+    draw() {
         let ctx = this.context;
 
         ctx.beginPath();
